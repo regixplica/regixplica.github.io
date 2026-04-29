@@ -37,6 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,0.9
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;}
 .htag{font-size:12px;padding:4px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text3);}
 
+/* LAYOUT PRINCIPAL */
 .main-grid{display:grid;grid-template-columns:1fr 300px;gap:48px;padding:60px 6%;align-items:start;}
 
 .sec{margin-bottom:48px;}
@@ -45,26 +46,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,0.9
 .sec-text{font-size:15px;color:var(--text2);line-height:1.85;}
 .sec-text p{margin-bottom:14px;}
 
-/* THUMBNAIL + LIGHTBOX */
+/* CAPA — layout sempre em coluna */
 .capa-section{display:block;margin-bottom:32px;}
-.thumb-wrap{position:relative;width:300px;max-width:100%;margin:0 auto 24px auto;cursor:pointer;border-radius:6px;overflow:hidden;border:1px solid var(--border);transition:border-color .25s,transform .25s;box-shadow:0 4px 24px rgba(0,0,0,0.4);display:block;}
-.thumb-wrap:hover{border-color:var(--accent);transform:scale(1.03);}
+
+.thumb-wrap{
+  position:relative;
+  width:260px;
+  max-width:100%;
+  margin:0 auto 24px auto;
+  cursor:pointer;
+  border-radius:6px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  transition:border-color .25s,transform .25s;
+  box-shadow:0 4px 24px rgba(0,0,0,0.4);
+  display:block;
+}
+.thumb-wrap:hover{border-color:var(--accent);transform:scale(1.02);}
 .thumb-wrap img{width:100%;display:block;aspect-ratio:1/1.414;object-fit:cover;}
-.thumb-info{width:100%;}
-.thumb-placeholder{width:100%;aspect-ratio:1/1.414;background:linear-gradient(160deg,#1a3a4a 0%,#0d2535 50%,#051520 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center;}
-.tp-logo{font-size:9px;letter-spacing:.12em;color:rgba(247,129,102,0.6);text-transform:uppercase;margin-bottom:10px;}
-.tp-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:6px;}
-.tp-sub{font-size:9px;color:var(--text2);line-height:1.4;margin-bottom:10px;}
-.tp-autor{font-size:9px;color:var(--text3);}
-.tp-ano{font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:rgba(247,129,102,0.25);margin-top:6px;}
+
 .zoom-hint{position:absolute;inset:0;background:rgba(247,129,102,0.0);display:flex;align-items:center;justify-content:center;transition:background .25s;}
 .thumb-wrap:hover .zoom-hint{background:rgba(247,129,102,0.12);}
 .zoom-icon{background:rgba(13,17,23,0.85);border:1px solid rgba(247,129,102,0.5);color:var(--accent);font-size:18px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.8);transition:opacity .25s,transform .25s;}
 .thumb-wrap:hover .zoom-icon{opacity:1;transform:scale(1);}
-.thumb-info{flex:1;}
+
+.thumb-info{width:100%;}
 .thumb-info h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:6px;}
 .thumb-sub{font-size:14px;color:var(--text2);margin-bottom:16px;font-style:italic;}
 .thumb-info p{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:16px;}
+
 .dl-btns{display:flex;flex-direction:column;gap:8px;}
 .btn-dl{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;transition:opacity .2s;font-family:'Inter',sans-serif;}
 .btn-dl-primary{background:var(--accent);color:#0d1117;}
@@ -73,16 +83,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,0.9
 .btn-dl-secondary:hover{border-color:var(--accent);color:var(--accent);}
 
 /* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;padding:24px;}
+.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:16px;}
 .lightbox.active{display:flex;}
-.lb-inner{position:relative;max-height:92vh;max-width:90vw;width:100%;display:flex;flex-direction:column;align-items:center;}
-.lb-inner img{max-height:90vh;max-width:90vw;width:auto;height:auto;border-radius:6px;object-fit:contain;box-shadow:0 8px 48px rgba(0,0,0,0.7);}
-.lb-placeholder{max-height:85vh;width:420px;max-width:100%;background:linear-gradient(160deg,#1a3a4a 0%,#0d2535 50%,#051520 100%);border-radius:6px;aspect-ratio:1/1.414;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 36px;text-align:center;box-shadow:0 8px 48px rgba(0,0,0,0.7);}
-.lp-badge{font-size:11px;letter-spacing:.18em;color:rgba(247,129,102,0.7);text-transform:uppercase;margin-bottom:16px;}
-.lp-title{font-family:'Syne',sans-serif;font-size:28px;font-weight:600;color:var(--text);line-height:1.15;margin-bottom:10px;}
-.lp-sub{font-size:15px;color:var(--text2);line-height:1.6;margin-bottom:28px;}
-.lp-autor{font-size:13px;color:var(--text3);border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;width:100%;}
-.lp-ano{font-family:'Syne',sans-serif;font-size:48px;font-weight:600;color:rgba(247,129,102,0.2);margin-top:12px;}
+.lb-inner{position:relative;display:flex;flex-direction:column;align-items:center;max-width:90vw;max-height:95vh;}
+.lb-inner img{max-width:90vw;max-height:85vh;width:auto;height:auto;display:block;border-radius:6px;box-shadow:0 8px 48px rgba(0,0,0,0.7);}
 .lb-close{position:absolute;top:-16px;right:-16px;width:36px;height:36px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;font-family:'Inter',sans-serif;}
 .lb-close:hover{border-color:var(--accent);color:var(--accent);}
 .lb-caption{margin-top:14px;font-size:13px;color:var(--text3);text-align:center;}
@@ -116,10 +120,7 @@ footer span{color:#f78166;}
 
 @media(max-width:768px){
   .main-grid{grid-template-columns:1fr;}
-  .thumb-info{width:100%;margin-top:20px;}
-  .lb-inner{max-width:95vw;}
-  .lb-inner img{max-width:95vw;max-height:85vh;width:auto;height:auto;display:block;margin:0 auto;}
-  .lightbox{padding:12px;}
+  .thumb-wrap{width:280px;}
 }
 </style>
 </head>
@@ -162,15 +163,16 @@ footer span{color:#f78166;}
     <div class="sec">
       <p class="sec-label">Produto Educacional</p>
       <h2 class="sec-title">Guia para Iniciar na Impressão 3D</h2>
+
       <div class="capa-section">
+
+        <!-- THUMBNAIL CLICÁVEL -->
         <div class="thumb-wrap" onclick="openLightbox()" title="Clique para ampliar">
-          <!--
-            INSTRUÇÃO: substitua o bloco "thumb-placeholder" abaixo pela tag de imagem:
-            <img src="./capa-guia-impressao3d.png" alt="Capa do Guia para Iniciar na Impressão 3D">
-          -->
           <img src="./capa-guia-impressao3d.png" alt="Capa do Guia para Iniciar na Impressão 3D">
           <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
         </div>
+
+        <!-- TEXTO ABAIXO DA IMAGEM -->
         <div class="thumb-info">
           <h3>Guia para Iniciar na Impressão 3D</h3>
           <p class="thumb-sub">Produção de materiais para Atividades Experimentais em Física</p>
@@ -181,6 +183,7 @@ footer span{color:#f78166;}
             <a href="https://repositorio.ufscar.br/items/fc97b20b-7989-4ffa-8185-6baff4051c0f" target="_blank" class="btn-dl btn-dl-secondary">↗ Ver no repositório UFSCar</a>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -290,12 +293,7 @@ footer span{color:#f78166;}
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <div class="lb-inner">
     <button class="lb-close" onclick="closeLightbox()">✕</button>
-    <!--
-      INSTRUÇÃO: substitua o bloco "lb-placeholder" abaixo pela tag de imagem:
-      <img src="./capa-guia-impressao3d.png" alt="Capa do Guia para Iniciar na Impressão 3D">
-    -->
     <img src="./capa-guia-impressao3d.png" alt="Capa do Guia para Iniciar na Impressão 3D">
-    </div>
     <p class="lb-caption">Guia para Iniciar na Impressão 3D · Reginaldo de Abreu · 2025</p>
     <p class="lb-hint">Clique fora para fechar · ESC para fechar</p>
   </div>
