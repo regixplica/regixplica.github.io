@@ -3,61 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Física — Ensino Médio — Reginaldo de Abreu</title>
+<meta name="description" content="Física — Ensino Médio. Teoria e exercícios resolvidos sobre Eletromagnetismo e Eletrodinâmica. Por Reginaldo de Abreu.">
+<title>Física — Ensino Médio | Reginaldo de Abreu</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--border:#30363d;--accent:#d2a8ff;--text:#e6edf3;--text2:#8b949e;--text3:#6e7681;--radius:8px;}
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#21262d;
+  --border:#30363d;--accent:#d2a8ff;--blue:#58a6ff;
+  --text:#e6edf3;--text2:#8b949e;--text3:#6e7681;
+  --radius:8px;
+}
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.6;}
+
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 6%;height:60px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:var(--text);text-decoration:none;}
 .nav-logo span{color:var(--accent);}
 .nav-right{display:flex;align-items:center;gap:16px;}
 .nav-back{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s;}
 .nav-back:hover{color:var(--text);}
-.nav-area{font-size:12px;padding:5px 14px;border:1px solid rgba(128,128,128,0.3);border-radius:20px;color:var(--accent);}
-.hero{padding:100px 6% 60px;border-bottom:1px solid var(--border);}
+.nav-area{font-size:12px;padding:5px 14px;border:1px solid rgba(210,168,255,0.3);border-radius:20px;color:var(--accent);}
+
+.hero{padding:100px 6% 60px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(210,168,255,0.07) 0%,transparent 70%);}
 .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text3);margin-bottom:24px;}
-.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s;}
 .breadcrumb a:hover{color:var(--text);}
 .breadcrumb span{color:var(--accent);}
-.area-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(128,128,128,0.08);border:1px solid rgba(128,128,128,0.2);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--accent);margin-bottom:20px;}
+.area-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(210,168,255,0.08);border:1px solid rgba(210,168,255,0.2);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--accent);margin-bottom:20px;}
 .hero-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:600;color:var(--text);line-height:1.1;margin-bottom:12px;}
-.hero-sub{font-size:16px;color:var(--text2);font-weight:300;}
+.hero-sub{font-size:16px;color:var(--text2);margin-bottom:24px;font-weight:300;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text3);margin-bottom:32px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.htag{font-size:12px;padding:4px 12px;border:1px solid var(--border);border-radius:20px;color:var(--text3);}
+
+/* CONTEÚDO */
 .content{padding:60px 6%;}
-.coming-card{background:var(--bg2);border:1px dashed var(--border);border-radius:var(--radius);padding:64px 32px;text-align:center;color:var(--text3);max-width:600px;margin:0 auto;}
-.coming-icon{font-size:48px;margin-bottom:16px;}
-.coming-card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:600;color:var(--text);margin-bottom:8px;}
-.coming-card p{font-size:14px;line-height:1.7;margin-bottom:24px;}
-.btn-back{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;}
-.btn-back:hover{border-color:var(--accent);color:var(--accent);}
+
+.grupo{margin-bottom:64px;}
+.grupo-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.grupo-icon{font-size:28px;}
+.grupo-titulo{font-family:'Syne',sans-serif;font-size:26px;font-weight:600;color:var(--text);}
+.grupo-desc{font-size:14px;color:var(--text2);margin-top:4px;}
+
+.topicos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+
+.topico-card{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 20px;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius);text-decoration:none;color:inherit;
+  transition:border-color .2s,background .2s,transform .15s;
+  position:relative;overflow:hidden;
+}
+.topico-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:3px;background:var(--card-accent,var(--accent));
+  transform:scaleY(0);transform-origin:bottom;transition:transform .25s;
+}
+.topico-card:hover{border-color:var(--card-accent,var(--accent));background:var(--bg3);transform:translateX(4px);}
+.topico-card:hover::before{transform:scaleY(1);}
+
+.topico-num{
+  font-family:'Syne',sans-serif;font-size:18px;font-weight:600;
+  color:var(--card-accent,var(--accent));opacity:0.4;
+  min-width:32px;
+}
+.topico-card:hover .topico-num{opacity:0.8;}
+.topico-info{flex:1;}
+.topico-titulo{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px;}
+.topico-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+.topico-tag{font-size:10px;padding:2px 8px;border:1px solid var(--border);border-radius:20px;color:var(--text3);}
+.topico-arrow{font-size:14px;color:var(--text3);transition:color .2s,transform .2s;}
+.topico-card:hover .topico-arrow{color:var(--card-accent,var(--accent));transform:translateX(3px);}
+
+/* BADGE EM BREVE */
+.badge-soon{font-size:10px;padding:2px 8px;background:rgba(227,179,65,0.1);border:1px solid rgba(227,179,65,0.3);border-radius:20px;color:#e3b341;margin-left:8px;}
+
 footer{background:var(--bg2);border-top:1px solid var(--border);text-align:center;padding:24px 6%;font-size:12px;color:var(--text3);}
 footer span{color:var(--accent);}
+
+@media(max-width:640px){
+  .topicos-grid{grid-template-columns:1fr;}
+  .grupo-titulo{font-size:22px;}
+}
 </style>
 </head>
 <body>
+
 <nav>
   <a href="../" class="nav-logo">Reginaldo<span>.</span></a>
   <div class="nav-right">
     <a href="../" class="nav-back">← Início</a>
-    <span class="nav-area">🔭 Física — Ensino Médio</span>
+    <span class="nav-area">🔭 Física</span>
   </div>
 </nav>
+
 <div class="hero">
-  <div class="breadcrumb"><a href="../">Início</a> › <span>Física — Ensino Médio</span></div>
+  <div class="breadcrumb">
+    <a href="../">Início</a> › <span>Física — Ensino Médio</span>
+  </div>
   <div class="area-badge">🔭 Física — Ensino Médio</div>
   <h1 class="hero-title">Física — Ensino Médio</h1>
-  <p class="hero-sub">Materiais didáticos, experimentos e recursos para o ensino de Física na educação básica.</p>
-</div>
-<div class="content">
-  <div class="coming-card">
-    <div class="coming-icon">🔭</div>
-    <h2>Conteúdos em preparação</h2>
-    <p>Esta seção está sendo organizada. Em breve você encontrará aqui materiais, projetos e recursos sobre Física — Ensino Médio.</p>
-    <a href="../" class="btn-back">← Voltar ao início</a>
+  <p class="hero-sub">Conceitos explicados com clareza · Exercícios resolvidos passo a passo</p>
+  <div class="hero-meta">
+    <span>📚 9 tópicos de teoria</span>
+    <span>✏️ 5 tópicos de exercícios</span>
+    <span>🎯 Eletromagnetismo · Eletrodinâmica</span>
+  </div>
+  <div class="hero-tags">
+    <span class="htag">Campo Elétrico</span>
+    <span class="htag">Eletrodinâmica</span>
+    <span class="htag">Lei de Ohm</span>
+    <span class="htag">Resistores</span>
+    <span class="htag">Energia Potencial</span>
+    <span class="htag">Animações</span>
   </div>
 </div>
-<footer>© 2025 <span>Reginaldo de Abreu</span> · Todos os direitos reservados</footer>
+
+<div class="content">
+
+  <!-- TEORIA -->
+  <div class="grupo">
+    <div class="grupo-header">
+      <div class="grupo-icon">📖</div>
+      <div>
+        <h2 class="grupo-titulo">Teoria</h2>
+        <p class="grupo-desc">Conceitos explicados com texto, gráficos, animações e GIFs ilustrativos</p>
+      </div>
+    </div>
+    <div class="topicos-grid">
+
+      <a class="topico-card" href="./teoria/trabalho-campo-eletrico/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">01</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Trabalho no Campo Elétrico</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Campo Elétrico</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/trabalho-energia-campo-eletrico/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">02</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Trabalho e Energia no Campo Elétrico</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Energia</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/campo-eletrico-uniforme/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">03</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Campo Elétrico Uniforme</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Campo Elétrico</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/eletrodinamica-1/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">04</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Eletrodinâmica (I)</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Corrente</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/eletrodinamica-2/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">05</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Eletrodinâmica (II)</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Corrente</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/segunda-lei-ohm/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">06</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Segunda Lei de Ohm</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Resistência</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/resistores/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">07</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Resistores</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Componentes</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/associacao-serie/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">08</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Associação em Série</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Circuitos</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./teoria/associacao-paralelo/" style="--card-accent:#d2a8ff;">
+        <div class="topico-num">09</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Associação em Paralelo</div>
+          <div class="topico-tags"><span class="topico-tag">Animação</span><span class="topico-tag">Circuitos</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- EXERCÍCIOS -->
+  <div class="grupo">
+    <div class="grupo-header">
+      <div class="grupo-icon">✏️</div>
+      <div>
+        <h2 class="grupo-titulo">Exercícios</h2>
+        <p class="grupo-desc">Problemas resolvidos passo a passo com explicações e justificativas</p>
+      </div>
+    </div>
+    <div class="topicos-grid">
+
+      <a class="topico-card" href="./exercicios/campo-eletrico/" style="--card-accent:#3fb950;">
+        <div class="topico-num">01</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Campo Elétrico</div>
+          <div class="topico-tags"><span class="topico-tag">Exercícios resolvidos</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./exercicios/energia-potencial-eletrica/" style="--card-accent:#3fb950;">
+        <div class="topico-num">02</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Energia Potencial Elétrica</div>
+          <div class="topico-tags"><span class="topico-tag">Exercícios resolvidos</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./exercicios/potencial-eletrico/" style="--card-accent:#3fb950;">
+        <div class="topico-num">03</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Potencial Elétrico</div>
+          <div class="topico-tags"><span class="topico-tag">Exercícios resolvidos</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./exercicios/leis-ohm/" style="--card-accent:#3fb950;">
+        <div class="topico-num">04</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Leis de Ohm</div>
+          <div class="topico-tags"><span class="topico-tag">Exercícios resolvidos</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+      <a class="topico-card" href="./exercicios/associacao-resistores/" style="--card-accent:#3fb950;">
+        <div class="topico-num">05</div>
+        <div class="topico-info">
+          <div class="topico-titulo">Associação de Resistores</div>
+          <div class="topico-tags"><span class="topico-tag">Exercícios resolvidos</span></div>
+        </div>
+        <div class="topico-arrow">→</div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 <span>Reginaldo de Abreu</span> · Todos os direitos reservados
+</footer>
+
 </body>
 </html>
