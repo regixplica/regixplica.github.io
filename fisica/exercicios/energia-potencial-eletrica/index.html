@@ -45,9 +45,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,0.9
 .alternativas{display:flex;flex-direction:column;gap:6px;margin:12px 0;}
 .alt{display:flex;gap:10px;font-size:14px;color:var(--text2);padding:8px 12px;border-radius:6px;border:1px solid var(--border);}
 .alt-letra{font-weight:600;color:var(--accent);min-width:16px;}
-.sozi-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:16px 0;}
-.sozi-wrap iframe{width:100%;height:380px;display:block;border:none;background:#ffffff;}
-.sozi-hint{font-size:12px;color:var(--text3);text-align:center;padding:8px;background:var(--bg3);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:6px;}
+.sozi-wrap{display:flex;gap:24px;align-items:flex-start;margin:16px 0;}
+.sozi-frame{width:380px;min-width:380px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.sozi-frame iframe{width:380px;height:640px;display:block;border:none;background:#ffffff;}
+.sozi-hint{font-size:12px;color:var(--text3);margin-top:8px;display:flex;align-items:center;gap:6px;}
+.sozi-texto{flex:1;font-size:14px;color:var(--text2);line-height:1.8;}
 .topic-nav{display:flex;gap:12px;margin-top:40px;padding-top:24px;border-top:1px solid var(--border);}
 .topic-nav a{flex:1;display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:inherit;transition:border-color .2s;}
 .topic-nav a:hover{border-color:var(--accent);}
@@ -118,8 +120,13 @@ footer span{color:var(--accent);}
           <p>Um sistema formado por três cargas puntiformes iguais colocadas em repouso nos vértices de um triângulo equilátero tem energia potencial eletrostática igual a U. Substitui-se uma das cargas por outra, na mesma posição, mas com o <strong>dobro do valor</strong>. A energia potencial eletrostática do novo sistema será igual a:</p>
         </div>
         <div class="sozi-wrap">
-          <iframe src="./ep01-animacao.html" title="Resolução EP01"></iframe>
-          <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          <div class="sozi-frame">
+            <iframe src="./ep01-animacao.html" title="Resolução EP01"></iframe>
+            <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          </div>
+          <div class="sozi-texto">
+            <p>Acompanhe a resolução passo a passo na animação ao lado.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -144,16 +151,21 @@ footer span{color:var(--accent);}
           </div>
         </div>
         <div class="sozi-wrap">
-          <iframe src="./ep02-animacao.html" title="Resolução EP02"></iframe>
-          <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          <div class="sozi-frame">
+            <iframe src="./ep02-animacao.html" title="Resolução EP02"></iframe>
+            <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          </div>
+          <div class="sozi-texto">
+            <p>Acompanhe a resolução passo a passo na animação ao lado.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- EP04 -->
+    <!-- EP03 -->
     <div class="exercicio">
       <div class="ex-header">
-        <span class="ex-num">EP 04</span>
+        <span class="ex-num">EP 03</span>
         <span class="ex-fonte">Resolução Analítica</span>
       </div>
       <div class="ex-body">
@@ -162,8 +174,13 @@ footer span{color:var(--accent);}
           <p>Determine a velocidade de cada uma delas no momento em que a distância de sua posição ao centro do quadrado for o <strong>dobro do valor inicial</strong>.</p>
         </div>
         <div class="sozi-wrap">
-          <iframe src="./ep04-animacao.html" title="Resolução EP04"></iframe>
-          <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          <div class="sozi-frame">
+            <iframe src="./ep03-animacao.html" title="Resolução EP04"></iframe>
+            <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          </div>
+          <div class="sozi-texto">
+            <p>Acompanhe a resolução passo a passo na animação ao lado.</p>
+          </div>
         </div>
       </div>
     </div>
