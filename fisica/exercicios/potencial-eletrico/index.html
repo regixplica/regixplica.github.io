@@ -49,9 +49,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,0.9
 .dados-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
 .dados ul{list-style:none;display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--text2);}
 .dados ul li::before{content:'· ';color:var(--accent);}
-.sozi-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:16px 0;}
-.sozi-wrap iframe{width:100%;height:380px;display:block;border:none;background:#ffffff;}
-.sozi-hint{font-size:12px;color:var(--text3);text-align:center;padding:8px;background:var(--bg3);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:6px;}
+.sozi-wrap{display:flex;gap:24px;align-items:flex-start;margin:16px 0;}
+.sozi-frame{width:380px;min-width:380px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.sozi-frame iframe{width:380px;height:640px;display:block;border:none;background:#ffffff;}
+.sozi-hint{font-size:12px;color:var(--text3);margin-top:8px;display:flex;align-items:center;gap:6px;}
+.sozi-texto{flex:1;font-size:14px;color:var(--text2);line-height:1.8;}
 .topic-nav{display:flex;gap:12px;margin-top:40px;padding-top:24px;border-top:1px solid var(--border);}
 .topic-nav a{flex:1;display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:inherit;transition:border-color .2s;}
 .topic-nav a:hover{border-color:var(--accent);}
@@ -135,8 +137,13 @@ footer span{color:var(--accent);}
           </ul>
         </div>
         <div class="sozi-wrap">
-          <iframe src="./pe01-animacao.html" title="Resolução PE01"></iframe>
-          <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          <div class="sozi-frame">
+            <iframe src="./pe01-animacao.html" title="Resolução PE01"></iframe>
+            <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          </div>
+          <div class="sozi-texto">
+            <p>Acompanhe a resolução passo a passo na animação ao lado.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -153,8 +160,13 @@ footer span{color:var(--accent);}
           <img src="https://static.wixstatic.com/media/dbffab_cb75020b89524b4685104e7d43eb49de~mv2.png/v1/crop/x_2,y_0,w_519,h_95/fill/w_259,h_46,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/duas%20geratrizes%20e%20ponto.png" alt="Duas cargas geratrizes e ponto P" class="ex-img">
         </div>
         <div class="sozi-wrap">
-          <iframe src="./pe02-animacao.html" title="Resolução PE02"></iframe>
-          <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          <div class="sozi-frame">
+            <iframe src="./pe02-animacao.html" title="Resolução PE02"></iframe>
+            <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          </div>
+          <div class="sozi-texto">
+            <p>Acompanhe a resolução passo a passo na animação ao lado.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -180,8 +192,13 @@ footer span{color:var(--accent);}
           <p>Dado: k = 9,0 × 10⁹ N · m²/C².</p>
         </div>
         <div class="sozi-wrap">
-          <iframe src="./pe03-animacao.html" title="Resolução PE03"></iframe>
-          <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          <div class="sozi-frame">
+            <iframe src="./pe03-animacao.html" title="Resolução PE03"></iframe>
+            <div class="sozi-hint">🖱️ Botão esquerdo para avançar · Botão direito para voltar</div>
+          </div>
+          <div class="sozi-texto">
+            <p>Acompanhe a resolução passo a passo na animação ao lado.</p>
+          </div>
         </div>
       </div>
     </div>
