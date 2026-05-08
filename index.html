@@ -270,11 +270,17 @@ footer span{color:var(--accent);}
       </div>
     </div>
     <div class="form-box">
-      <h3>Envie uma mensagem</h3>
-      <div class="fg"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-      <div class="fg"><label>E-mail</label><input type="email" placeholder="seu@email.com"></div>
-      <div class="fg"><label>Mensagem</label><textarea placeholder="Como posso ajudar?"></textarea></div>
-      <button class="btn-send">Enviar →</button>
+      
+
+<form class="form-box" action="https://formspree.io/f/mbdwazqo" method="POST">
+  <h3>Envie uma mensagem</h3>
+  <div class="fg"><label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required></div>
+  <div class="fg"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required></div>
+  <div class="fg"><label>Mensagem</label><textarea name="mensagem" placeholder="Como posso ajudar?" required></textarea></div>
+  <button type="submit" class="btn-send">Enviar →</button>
+</form>
+
+      
     </div>
   </div>
 </section>
